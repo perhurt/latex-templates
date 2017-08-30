@@ -1,62 +1,23 @@
 \documentclass[a4paper, 11pt, oneside]{report}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{fullpage}
-\usepackage{marvosym}
-\usepackage{fancyhdr}
+\usepackage{kaulab}
 
-
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
+% .....oOO Fyll i korrekta värden nedan OOo.....................................
+\labnr{1}
+\labtitle{Labbnamn}
+\coursecode{DVGAXY}
+\coursename{Exempelkurs}
+\supervisor{Per Hurtig}
+\labdate{2017-01-01}
+\labdateRevise{2017-01-08}
+\labcomments{Kommentarer från handledare}
+\laborantA{Förnamn}{Efternamn}{Personnummer}
+\laborantB{}{}{}
+% ..............................................................................
 
 \begin{document}
+\labfront % Detta kommando skapar labbrapportens framsida
 
-\begin{titlepage} % Suppresses headers and footers on the title page
-    \thispagestyle{fancy}
-    \lfoot{\rule{\textwidth}{0.4pt}\\\small
-        {\bf Beslut}\\
-        \begin{tabular}{llll}
-            Godkänd     & \HollowBox \\
-            Retur       & \HollowBox & Lämna in senast & 2017-01-01 \\
-            Underkänd   & \HollowBox \\
-        \end{tabular}
-    }
-    \cfoot{}
-    \rfoot{\makebox[50pt][l]{\raisebox{-1.1\totalheight}[0pt][0pt]{\includegraphics[width=0.12\textwidth]{figures/kau_logo}}}}
-
-    \vspace*{\baselineskip} % White space at the top of the page
-    {\LARGE\noindent Laboration 1: Laborationens namn}\\
-    \rule[3mm]{\textwidth}{0.4pt} % Thin horizontal rule
-    \begin{tabular}{ll}
-        Kurskod:    & DVGAXY \\
-        Kursnamn:   & Programmering \\
-        Datum:      & 2017-01-01 \\
-        Handledare: & För- och efternamn \\
-    \end{tabular} \\
-    \rule{\textwidth}{0.4pt} % Thin horizontal rule
-
-    \vspace{\baselineskip} % Whitespace above the title
-
-    {\bf\noindent Deltagare}\\
-    \rule[3mm]{\textwidth}{0.4pt} % Thin horizontal rule
-    \begin{tabular}{lll}
-        Förnamn     & Efternamn     & Personnummer \\
-        Förnamn     & Efternamn     & Personnummer \\
-    \end{tabular} \\
-
-    \vspace{3\baselineskip} % Whitespace above the title
-    {\bf\noindent Kommentarer}\\
-    \rule[3mm]{\textwidth}{0.4pt} % Thin horizontal rule
-    Kommentarer från handledare \\
-    \rule{\textwidth}{0.4pt} % Thin horizontal rule
-
-
-\end{titlepage}
-
-\newpage
-%----------------------------------------------------------------------------------------
-asdasdsad
 
 \end{document}

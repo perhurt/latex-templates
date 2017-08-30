@@ -1,0 +1,94 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{kaulab}[2017/08/30 kaulab Package]
+
+\RequirePackage{lmodern}
+\RequirePackage{fancyhdr}
+\RequirePackage{graphicx}
+\RequirePackage{fullpage}
+\RequirePackage{marvosym}
+
+%% 'sans serif' option
+\DeclareOption{sans}{
+  \renewcommand{\familydefault}{\sfdefault}
+}
+
+%% 'roman' option
+\DeclareOption{roman}{
+  \renewcommand{\familydefault}{\rmdefault}
+}
+
+%% Global indentation option
+\newif\if@neverindent\@neverindentfalse
+\DeclareOption{neverindent}{
+  \@neverindenttrue
+}
+
+\ExecuteOptions{roman}
+
+\ProcessOptions\relax
+
+%% Traditional LaTeX or TeX follows...
+
+\newcommand{\labnr}[1]{\newcommand{\labnrI}{#1}}
+\newcommand{\labtitle}[1]{\newcommand{\labtitleI}{#1}}
+\newcommand{\coursecode}[1]{\newcommand{\coursecodeI}{#1}}
+\newcommand{\coursename}[1]{\newcommand{\coursenameI}{#1}}
+\newcommand{\supervisor}[1]{\newcommand{\supervisorI}{#1}}
+\newcommand{\labdate}[1]{\newcommand{\labdateI}{#1}}
+\newcommand{\labdateRevise}[1]{\newcommand{\labdateReviseI}{#1}}
+\newcommand{\labcomments}[1]{\newcommand{\labcommentsI}{#1}}
+\newcommand{\laborantA}[3]{%
+    \newcommand{\laborantAFirstN}{#1}
+    \newcommand{\laborantASurN}{#2}
+    \newcommand{\laborantAPnr}{#3}
+}
+\newcommand{\laborantB}[3]{%
+    \newcommand{\laborantBFirstN}{#1}
+    \newcommand{\laborantBSurN}{#2}
+    \newcommand{\laborantBPnr}{#3}
+}
+
+\newcommand{\labfront}{%
+\begin{titlepage}
+    \thispagestyle{fancy}
+    \lfoot{\rule{\textwidth}{0.4pt}\\\small
+        {\bf Beslut}\\
+        \begin{tabular}{llll}
+            Godkänd     & \HollowBox \\
+            Retur       & \HollowBox & Lämna in senast & \labdateReviseI \\
+            Underkänd   & \HollowBox \\
+        \end{tabular}
+    }
+    \cfoot{}
+    \rfoot{\makebox[50pt][l]{\raisebox{-1.1\totalheight}[0pt][0pt]{\includegraphics[width=0.12\textwidth]{figures/kau_logo}}}}
+
+    \vspace*{\baselineskip}
+    {\LARGE\noindent Laboration \labnrI: \labtitleI}\\
+    \rule[3mm]{\textwidth}{0.4pt}
+    \begin{tabular}{ll}
+        Kurskod:    & \coursecodeI \\
+        Kursnamn:   & \coursenameI \\
+        Datum:      & \labdateI \\
+        Handledare: & \supervisorI\\
+    \end{tabular} \\
+    \rule{\textwidth}{0.4pt}
+
+    \vspace{\baselineskip}
+
+    {\bf\noindent Deltagare}\\
+    \rule[3mm]{\textwidth}{0.4pt}
+    \begin{tabular}{lll}
+        \laborantAFirstN     & \laborantASurN   & \laborantAPnr\\
+        \laborantBFirstN     & \laborantBSurN   & \laborantBPnr
+    \end{tabular} \\
+
+    \vspace{3\baselineskip}
+    {\bf\noindent Kommentarer}\\
+    \rule[3mm]{\textwidth}{0.4pt}
+    \labcommentsI\\
+    \rule{\textwidth}{0.4pt}
+\end{titlepage}
+}
+
+
+\endinput
